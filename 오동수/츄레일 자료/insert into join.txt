@@ -1,0 +1,5 @@
+INSERT INTO grade (st_no, sub_no, semester, score)
+SELECT s.st_no, 'kor', '3학년1학기', 85
+FROM student s
+JOIN grade g ON s.st_no = g.st_no
+WHERE s.st_no = 'st001' AND g.sub_no = 'kor' and semester='3학년1학기';
