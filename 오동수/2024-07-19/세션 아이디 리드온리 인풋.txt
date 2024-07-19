@@ -1,0 +1,2 @@
+
+<input type="text" name="noticeWriter" id="noticeWriter" value="${session.userId}" readonly>
