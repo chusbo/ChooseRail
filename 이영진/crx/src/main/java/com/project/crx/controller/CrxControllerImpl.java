@@ -5,29 +5,59 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class CrxControllerImpl {
-
+	
+	//일반예매
     @GetMapping("/ticket.do")
     public String ticket() {
         return "ticket"; 
     }
     
+    //단체예매
     @GetMapping("/groupTicket.do")
     public String groupTicket() {
         return "groupTicket"; 
     }
     
-    @GetMapping("/list.do")
-    public String list() {
-        return "list"; 
-    }
-    
+    //예약
     @GetMapping("/reservation.do")
     public String reservation() {
         return "reservation"; 
     }
     
+    //결제
     @GetMapping("/payment.do")
     public String payment() {
         return "payment"; 
     }
+    
+    //발권
+    @GetMapping("/ticketing.do")
+    public String ticketing() {
+        return "ticketing"; 
+    }
+    
+    //예매관리
+    @GetMapping("/management.do")
+    public String management() {
+        return "management"; 
+    }
+    
+    //이용내역
+    @GetMapping("/usageDetails.do")
+    public String usageDetails() {
+        return "usageDetails"; 
+    }
+    
+    //환불
+    @GetMapping("/refund.do")
+    public String refund() {
+        return "refund"; 
+    }
+    
+  //화불완료
+    @GetMapping("/refundEnd.do")
+    public String refundEnd() {
+        return "refundEnd"; 
+    }
+    
 }

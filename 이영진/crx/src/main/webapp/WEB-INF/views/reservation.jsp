@@ -8,7 +8,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
-<title>예약하기</title>
+<title>예약</title>
 <style>
 	.all{
 		width: 1200px;	
@@ -47,15 +47,9 @@
 	</div>
 		
 	<br>
-	<div class="grid text-center">
-		<div class="tiline g-col-3">1.조회</div>
-		―
-		<div class="tiline g-col-3" style="background-color:#00cc00;">2.예약</div>
-		―
-		<div class="tiline g-col-3">3.결제</div>
-		―
-		<div class="tiline g-col-3">4.발권</div>
-	</div>
+		 <div style="text-align:center;">
+			 <img src= "../img/mark2.gif" style="width:500px">
+		 </div>
 	
 	<br>
 	<div class="guide">
@@ -67,18 +61,18 @@
 	<br>
 	<div>
 		<table class="table">
-		  <thead class="table-success">
-		    <th>승차일자</th>
-			<th>열차종류</th>
-			<th>열차번호</th>
-			<th>출발역</th>
-			<th>도착역</th>
-			<th>출발시간</th>
-			<th>도착시간</th>
-			<th>인원</th>
-			<th>결제금액</th>
-		  </thead>
-		  <tbody>
+		    <thead class="table-success">
+			    <th>승차일자</th>
+				<th>열차종류</th>
+				<th>열차번호</th>
+				<th>출발역</th>
+				<th>도착역</th>
+				<th>출발시간</th>
+				<th>도착시간</th>
+				<th>인원</th>
+				<th>결제금액</th>
+		   </thead>
+		   <tbody>
 		    <td>#</td>
 			<td>#</td>
 			<td>#</td>
@@ -88,7 +82,7 @@
 			<td>#</td>
 			<td>#</td>
 			<td>#</td>
-		  </tbody>
+		   </tbody>
 		</table>
 	</div>
 	

@@ -7,7 +7,7 @@
 <head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<title>일반 승차권 예매</title>
+<title>단체승차권 예매</title>
 <style>
 	
 	.all{
@@ -39,7 +39,10 @@
 	.minititle a{
 		color: #000000;
 	}
-
+	table, th, td {
+		border: 2px solid white;
+	    border-collapse: collapse;
+	}
 </style>
 </head>
 <body>	 
@@ -47,19 +50,13 @@
 <div class="all">
 	
 	<div class="maintitle">
-		<h1>일반 승차권</h1>
+		<h1>단체승차권</h1>
 		<hr>
 	</div>
 	
 	<br>
-	<div class="grid text-center">
-	    <div class="tiline g-col-3" style="background-color:#00cc00;">1.조회</div>
-	     ―
-	    <div class="tiline g-col-3">2.예약</div>
-	     ―
-	    <div class="tiline g-col-3">3.결제</div>
-	     ―
-		<div class="tiline g-col-3">4.발권</div>
+	<div style="text-align:center;">
+		<img src= "../img/mark1.gif" style="width:500px">
 	</div>
 	
    <br>
@@ -196,7 +193,7 @@
 					
 					&nbsp;&nbsp;
 					<label id="listtime">시간</label>
-					<select style="border: 1px solid #black; padding: 5px; width: 55px; background: #fff;" name="listtime" id="listtime" class="ymd checkForm" onchange="changeWeekInfo();" option="{isMust :false, message : '출발시간을 선택하십시오.'}" title="출발시간 선택">
+					<select style="border: 1px solid #black; padding: 5px; width: 65px; background: #fff;" name="listtime" id="listtime" class="ymd checkForm" onchange="changeWeekInfo();" option="{isMust :false, message : '출발시간을 선택하십시오.'}" title="출발시간 선택">
 						<option value="08" selected="selected">
 							08
 						</option>
