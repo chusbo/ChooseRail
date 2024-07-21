@@ -81,7 +81,6 @@
 	<div class="guide">
 		<p class="guidep">결제방법은 신용카드, 간편결제 2가지가 있습니다.</p>
 		<p class="guidep">간편결제의 경우 브라우저의 팝업 차단을 허용하신 후 이용해 주시기 바랍니다.</p>
-		
 	</div>
 	
 	<br>
@@ -89,7 +88,7 @@
 		<table class="amount">
 			<thead class="ta">
 				<th>결제</th>
-				<td>#</td>
+				<td>100</td>
 			</thead>	
 		</table>
 	</div>
@@ -105,31 +104,33 @@
 	</ul>
 	<div class="tab-content" id="myTabContent">
 	    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-		    <br>
-			<table class="table">
-				<thead class="table-success">
-					<tr class="taa">
-						<th>카드종류</th>
-						<td>#</td>
-					</tr>
-					<tr class="taa">
-						<th>카드번호</th>
-						<td>#</td>
-					</tr>
-					<tr class="taa">
-						<th>유효기간</th>
-						<td>#</td>
-					</tr>
-					<tr class="taa">
-						<th>할부개월</th>
-						<td>#</td>
-					</tr>
-					<tr class="taa">
-						<th>비밀번호</th>
-						<td>#</td>
-					</tr>
-				</thead>
-			</table>
+		    <br>		
+			
+			
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="payment" id="card" checked>
+				<label class="form-check-label" for="card">
+				    신용카드
+				 </label>
+			</div>
+			<div class="form-check">
+			   <input class="form-check-input" type="radio" name="payment" id="trans" >
+			   <label class="form-check-label" for="trans">
+			    실시간계좌이체
+			  </label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="payment" id="vbank" >
+				<label class="form-check-label" for="vbank">
+					가상계좌
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="payment" id="phone" >
+				<label class="form-check-label" for="phone">
+					소액결제
+				</label>
+			</div>
 			
 			<br>
 			<div class="guide">
@@ -169,8 +170,9 @@
 	
 	<br>
 	<div class="payment">
-		<button type="button" class="btn btn-success">결제하기</button>
-		<button type="button" class="btn btn-success">되돌아가기</button>
+		
+		<input type ="button" value="결제하기" class="btn btn-success" onclick="findSubject()">
+		<button type="button" class="btn btn-success">돌아가기</button>
 	</div>
 	
 </div>

@@ -54,10 +54,19 @@ public class CrxControllerImpl {
         return "refund"; 
     }
     
-  //화불완료
+    //환불완료
     @GetMapping("/refundEnd.do")
     public String refundEnd() {
         return "refundEnd"; 
     }
     
+    //테스트
+    @GetMapping("/test.do")
+    public String test() {
+        return "test"; 
+    }
+    @GetMapping("/test2.do")
+    public String test2() {
+        return "test2"; 
+    }
 }
