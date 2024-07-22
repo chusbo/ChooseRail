@@ -1,0 +1,9 @@
+일반 예매 - ticket.do
+단체예매 - groupTicket.do
+예약 - reservation.do
+결제 - payment.do
+발권 - ticketing.do
+예매관리 - management.do
+이용내역 - usageDetails.do
+환불 - refund.do
+환불완료 - refundEnd.do

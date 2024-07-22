@@ -1,0 +1,59 @@
+/* 공지사항 */	
+noticeList 공지사항 목록	43p
+noticeAdd 공지사항 등록	44,45p
+noticeDetail 공지사항 상세보기    46p	
+noticeMod 공지사항 수정    47p
+
+전부 제목 내용
+/* FAQ */
+faqList FAQ 목록	50p
+faqAdd FAQ 등록	51p
+faqDetail FAQ 상세보기    52p	
+faqMod FAQ 수정	53p
+
+/* 고객센터 */
+customerservice 고객센터   54p
+
+/* 유실물 안내 */
+lostItemList 유실물 안내 목록	    55p 
+lostItemAdd 유실물 안내 등록    56,57p
+lostItemDetail 유실물 안내 상세보기    58p
+품목, 보관장소, 등록일자
+
+/* 안내사항 */
+guideline 안내사항 페이지    59p
+
+전부 제목 내용
+/* 1:1문의 */      전부 Q&A로 변경
+qnaList 1:1문의 목록    60p
+qnaAdd 1:1문의 등록    61,62p
+qnaDetail 1:1문의 상세보기    63p
+qnaMode 1:1문의 수정    64p
+관리자 답변창 65p
+답변 수정   66p
+
+
+/* 종합이용안내 */
+trainService 열차서비스    67p
+linkService 연계교통서비스   69p 
+wheelService 휠체어서비스    70p
+
+/* 승차권이용안내 */
+ticketMangement 승차권 구입/환불/분실    71p
+trainDelayStop 열차지연/운행중지    72p
+trainFaresTime 열차운임 및 시간표    73p
+
+/* 정차역이용안내 */
+hwacheon 화천역    74p
+yanggu 양구역    75p
+inje 인제역    76p
+goseong 고성역    77p
+sokcho 속초역    78p
+yangyang 양양역    79p
+
+/* 지연배상신청 */
+trainDelayRefund 열차지연 시 교통비 지급 안내문    80p
+delayCompensationRequest 지연료 계좌반환 신청    81p
+
+/* 서비스 예약 */
+serviceReservation 서비스 예약    82p

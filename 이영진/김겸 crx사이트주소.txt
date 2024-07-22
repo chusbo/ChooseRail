@@ -1,0 +1,7 @@
+메인페이지 main.jsp 15p
+로그인페이지 login.jsp 18p
+휴대폰 인증페이지 confirm.jsp 19p
+본인인증페이지 userConfirm.jsp 20p
+회원가입약관페이지 signupTerms.jsp 21p
+회원가입페이지 signup.jsp 22p
+회원가입완료페이지 finishSignup.jsp 23p (수정필요 OOO님 -> (회원번호)님)
