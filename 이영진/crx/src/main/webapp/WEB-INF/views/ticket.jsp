@@ -44,6 +44,13 @@
 	    border: 2px solid white;
 	    border-collapse: collapse;
 	}
+	#Date{
+		width:140px;
+		display:inline;
+	}
+	#listDate{
+		
+	}
 
 </style>
 </head>
@@ -93,105 +100,8 @@
 				
 				<br>			
 				<div class= "rt">
-					<label id="listdate">출발일</label>
-					<select style="border: 1px solid #black; padding: 5px; width: 170px; background: #fff;" name="dptDt" id="dptDt" class="ymd checkForm" onchange="changeWeekInfo();" option="{isMust :false, message : '출발일자를 선택하십시오.'}" title="출발일자 선택">
-						<option value="20240717" selected="selected">
-							2024/07/17(수)
-						</option>
-						<option value="20240718">
-							2024/07/18(목)
-						</option>
-						<option value="20240719">
-							2024/07/19(금)
-						</option>
-						<option value="20240720">
-							2024/07/20(토)
-						</option>
-						<option value="20240721">
-							2024/07/21(일)
-						</option>
-						<option value="20240722">
-							2024/07/22(월)
-						</option>										
-						<option value="20240723">
-							2024/07/23(화)
-						</option>
-						<option value="20240724">
-							2024/07/24(수)
-						</option>
-						<option value="20240725">
-							2024/07/25(목)
-						</option>
-						<option value="20240726">
-							2024/07/26(금)
-						</option>
-						<option value="20240727">
-							2024/07/27(토)
-						</option>
-						<option value="20240728">
-							2024/07/28(일)
-						</option>
-						<option value="20240729">
-							2024/07/29(월)
-						</option>
-						<option value="20240730">
-							2024/07/30(화)
-						</option>
-						<option value="20240731">
-							2024/07/31(수)
-						</option>
-						<option value="20240801">
-							2024/08/01(목)
-						</option>
-						<option value="20240802">
-							2024/08/02(금)
-						</option>									
-						<option value="20240803">
-							2024/08/03(토)
-						</option>							
-						<option value="20240804">
-							2024/08/04(일)
-						</option>										
-						<option value="20240805">
-							2024/08/05(월)
-						</option>
-						<option value="20240806">
-							2024/08/06(화)
-						</option>
-						<option value="20240807">
-							2024/08/07(수)
-						</option>
-						<option value="20240808">
-							2024/08/08(목)
-						</option>
-						<option value="20240809">
-							2024/08/09(금)
-						</option>
-						<option value="20240810">
-							2024/08/10(토)
-						</option>
-						<option value="20240811">
-							2024/08/11(일)
-						</option>
-						<option value="20240812">
-							2024/08/12(월)
-						</option>
-						<option value="20240813">
-							2024/08/13(화)
-						</option>										
-						<option value="20240814">
-							2024/08/14(수)
-						</option>					
-						<option value="20240815">
-							2024/08/15(목)
-						</option>
-						<option value="20240816">
-							2024/08/16(금)
-						</option>
-						<option value="20240817">
-							2024/08/17(토)
-						</option>
-					</select>
+					<label for="Date">출발일</label>
+					<input type="date" id="Date" name="lostItemRegDate">		
 					
 					&nbsp;&nbsp;
 					<label id="listtime">시간</label>
@@ -386,7 +296,14 @@
    
    
 </div>
-
+<!-- 오늘 이전으로 선택되지 않도록 설정 -->
+<script>
+	var now_utc = Date.now()
+		var timeOff = new Date().getTimezoneOffset()*60000;
+		var today = new Date(now_utc-timeOff).toISOString().split("T")[0];
+		document.getElementById("Date").value = new Date().toISOString().substring(0, 10);
+		document.getElementById("Date").setAttribute("min", today);
+</script>
 </body>
 
 

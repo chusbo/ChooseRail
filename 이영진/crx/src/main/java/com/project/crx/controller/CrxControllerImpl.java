@@ -69,4 +69,9 @@ public class CrxControllerImpl {
     public String test2() {
         return "test2"; 
     }
+	@GetMapping("/test3.do")
+	public String test3() {
+	    return "test3"; 
+	}
+
 }

@@ -67,8 +67,7 @@
 <!--						test += 'tfee=' + egdjrsd-->
 <!--						$.ajax({-->
 <!--							type: 'post',-->
-<!--							url: "https://apis.data.go.kr/1613000/TrainInfoService/getStrtpntAlocFndTrainInfoinGra?" + test,-->
-							
+<!--							url: "https://apis.data.go.kr/1613000/TrainInfoService/getStrtpntAlocFndTrainInfoinGra?" + test,-->						
 <!--						})-->
 						
 				        result ='0';
