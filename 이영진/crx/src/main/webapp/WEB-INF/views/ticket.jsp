@@ -23,7 +23,7 @@
 	}
 	.mid{
 		
-		height: 350px;
+		height: 300px;
 		background: #f8f8f8;		
 	}
 	.relist{
@@ -50,6 +50,10 @@
 	}
 	#listDate{
 		
+	}
+	.checkTrain{
+		border: 2px solid white;
+		border-collapse: collapse;
 	}
 
 </style>
@@ -82,222 +86,190 @@
 				</ul>
    </div>
    <div class="mid">
-		<div>
-			
-			<div class="relist">
-				
-				<br>
-				<div class= "rt">
-					<label id="start">출발역</label>
-					<input id="start" name="txtGoStart" type="text" class="inp200" value="대전" onchange="hideResult();" title="출발역" autocomplete="off" style="ime-mode:active">
-					<a href="#"><img src="/images/btn_tra_sch.png" alt="조회"></a>
-								
-					&nbsp;&nbsp;&nbsp;
-					<label id="end">도착역</label>
-					<input id="end" name="txtGoStart" type="text" class="inp200" value="서울" onchange="hideResult();" title="출발역" autocomplete="off" style="ime-mode:active">
-					<a href="#"><img src="/images/btn_tra_sch.png" alt="조회"></a>	
-				</div>
-				
-				<br>			
-				<div class= "rt">
-					<label for="Date">출발일</label>
-					<input type="date" id="Date" name="lostItemRegDate">		
-					
-					&nbsp;&nbsp;
-					<label id="listtime">시간</label>
-					<select style="border: 1px solid #black; padding: 5px; width: 65px; background: #fff;" name="listtime" id="listtime" class="ymd checkForm" onchange="changeWeekInfo();" option="{isMust :false, message : '출발시간을 선택하십시오.'}" title="출발시간 선택">
-						<option value="08" selected="selected">
-							08
-						</option>
-						<option value="10">
-							10
-						</option>
-						<option value="12">
-							12
-						</option>
-						<option value="14">
-							14
-						</option>
-						<option value="16">
-							16
-						</option>
-						<option value="18">
-							18
-						</option>
-						<option value="20">
-							20
-						</option>
-						<option value="22">
-							22
-						</option>
-						<option value="24">
-							24
-						</option>													
-					</select>
-					<label id="listtime">시</label>	
-				</div>			
-				
-				<br>
-				<div class= "rt">
-					<div>
-						<label class= "listar" id="personnel">인원정보</label>
-						<select style="border: 1px solid #black; padding: 5px; width: 200px; background: #fff;" name="personnel" id="personnel" class="ymd checkForm" onchange="changeWeekInfo();" option="{isMust :false, message : '인원을 선택해 주세요.'}" title="인원을 선택해 주세요">
-							<option value="어른(만13세 이상) 2명">
-								어른(만13세 이상) 0명
-							</option>
-							<option value="어른(만13세 이상) 1명" selected="selected">
-								어른(만13세 이상) 1명
-							</option>
-							<option value="어른(만13세 이상) 2명">
-								어른(만13세 이상) 2명
-							</option>
-							<option value="어른(만13세 이상) 3명">
-								어른(만13세 이상) 3명
-							</option>
-							<option value="어른(만13세 이상) 4명">
-								어른(만13세 이상) 4명
-							</option>
-							<option value="어른(만13세 이상) 5명">
-								어른(만13세 이상) 5명
-							</option>
-							<option value="어른(만13세 이상) 6명">
-								어른(만13세 이상) 6명
-							</option>
-							<option value="어른(만13세 이상) 7명">
-								어른(만13세 이상) 7명
-							</option>
-							<option value="어른(만13세 이상) 8명">
-								어른(만13세 이상) 8명
-							</option>
-							<option value="어른(만13세 이상) 9명">
-								어른(만13세 이상) 9명
-							</option>
-							<option value="어른(만13세 이상) 10명">
-								어른(만13세 이상) 10명
-							</option>													
-						</select>
-						<label>명</label>
-						
-						&nbsp;&nbsp;
-						<select style="border: 1px solid #black; padding: 5px; width: 200px; background: #fff;" name="child" id="child" class="ymd checkForm" onchange="changeWeekInfo();" option="{isMust :false, message : '인원을 선택해 주세요.'}" title="인원을 선택해 주세요">
-							<option value="어린이(만 6~12세) 0명" selected="selected">
-								어린이(만6~12세) 0명
-							</option>
-							<option value="어린이(만 6~12세) 1명">
-								어린이(만 6~12세) 1명
-							</option>
-							<option value="어린이(만 6~12세) 2명">
-								어린이(만 6~12세) 2명
-							</option>
-							<option value="어린이(만 6~12세) 3명">
-								어린이(만 6~12세) 3명
-							</option>
-							<option value="어린이(만 6~12세) 4명">
-								어린이(만 6~12세) 4명
-							</option>
-							<option value="어린이(만 6~12세) 5명">
-								어린이(만 6~12세) 5명
-							</option>
-							<option value="어린이(만 6~12세) 6명">
-								어린이(만 6~12세) 6명
-							</option>
-							<option value="어린이(만 6~12세) 7명">
-								어린이(만 6~12세) 7명
-							</option>
-							<option value="어린이(만 6~12세) 8명">
-								어린이(만 6~12세) 8명
-							</option>
-							<option value="어린이(만 6~12세) 9명">
-								어린이(만 6~12세) 9명
-							</option>
-							<option value="어린이(만 6~12세) 10명">
-								어린이(만 6~12세) 10명
-							</option>													
-					</select>
-					<label>명</label>
-					
-					&nbsp;&nbsp;
-					<select style="border: 1px solid #black; padding: 5px; width: 200px; background: #fff;" name="old" id="old" class="ymd checkForm" onchange="changeWeekInfo();" option="{isMust :false, message : '인원을 선택해 주세요.'}" title="인원을 선택해 주세요">
-						<option value="경로(만 65세 이상) 0명" selected="selected">
-							경로(만 65세 이상) 0명
-						</option>
-						<option value="경로(만 65세 이상) 1명">
-							경로(만 65세 이상) 1명
-						</option>
-						<option value="어린이(만 6~12세) 2명">
-							경로(만 65세 이상) 2명
-						</option>
-						<option value="어린이(만 6~12세) 3명">
-							경로(만 65세 이상) 3명
-						</option>
-						<option value="어린이(만 6~12세) 4명">
-							경로(만 65세 이상) 4명
-						</option>
-						<option value="어린이(만 6~12세) 5명">
-							경로(만 65세 이상) 5명
-						</option>
-						<option value="어린이(만 6~12세) 6명">
-							경로(만 65세 이상) 6명
-						</option>
-						<option value="어린이(만 6~12세) 7명">
-							경로(만 65세 이상) 7명
-						</option>
-						<option value="어린이(만 6~12세) 8명">
-							경로(만 65세 이상) 8명
-						</option>
-						<option value="어린이(만 6~12세) 9명">
-							경로(만 65세 이상) 9명
-						</option>
-						<option value="어린이(만 6~12세) 10명">
-							경로(만 65세 이상) 10명
-						</option>													
-					</select>
-					<label>명</label>	
-				</div>
-				
-				<br>
-				<div class= "rt">
-					<label id="seattype">좌석종류</label>
-					<select style="border: 1px solid #black; padding: 5px; width: 105px; background: #fff;" name="seattype" id="seattype" class="ymd checkForm" onchange="changeWeekInfo();" option="{isMust :false, message : '좌석를 선택해 주세요.'}" title="좌석 종류를 선택해 주세요">
-						<option value="좌석 종류" selected="selected">
-							좌석 종류
-						</option>
-						<option value="일반">
-							일반
-						</option>
-						<option value="특실">
-							특실
-						</option>
-					</select>					
-				</div>
-				
-				<br>
-				<div class= "rt">
-					<label id="seattype">차종구분</label>
-					&nbsp;
-					<input class="form-check-input" type="radio" name="flexRadioDefault" id="CRX">
-					<label class="form-check-label" for="CRX">
-					    CRX
-					</label>
-					&nbsp;
-					<input class="form-check-input" type="radio" name="flexRadioDefault" id="KTX" checked>
-					<label class="form-check-label" for="KTX">
-					    KTX
-					</label>
-				</div>	
-				
-				<br><br><br>
-				<div class="search">
-					<button type="button" class="btn btn-success">조회하기</button>
-				</div>
-			</div>
-		</div>	
-   </div>
-   
-   
-</div>
+           <div>
+               <div class="relist">
+                   <br>
+                   <div class="rt">
+                       <label id="start">출발역</label>
+                       <input id="start" name="txtGoStart" type="text" class="inp200" value="대전" onchange="hideResult();" title="출발역" autocomplete="off" style="ime-mode:active">
+                       <a href="#"><img src="/images/btn_tra_sch.png" alt="조회"></a>
+                       &nbsp;&nbsp;&nbsp;
+                       <label id="end">도착역</label>
+                       <input id="end" name="txtGoStart" type="text" class="inp200" value="서울" onchange="hideResult();" title="도착역" autocomplete="off" style="ime-mode:active">
+                       <a href="#"><img src="/images/btn_tra_sch.png" alt="조회"></a>    
+                   </div>
+                   <br>
+                   <div class="rt">
+                       <label for="Date">출발일</label>
+                       <input type="date" id="Date" name="lostItemRegDate">        
+                       &nbsp;&nbsp;
+                       <label id="listtime">시간</label>
+                       <select id="listtime">
+                           <option value="08" selected="selected">08</option>
+                           <option value="10">10</option>
+                           <option value="12">12</option>
+                           <option value="14">14</option>
+                           <option value="16">16</option>
+                           <option value="18">18</option>
+                           <option value="20">20</option>
+                           <option value="22">22</option>
+                           <option value="24">24</option>
+                       </select>
+                       <label id="listtime">시</label>    
+                   </div>
+                   <br>
+                   <div class="rt">
+                       <div>
+                           <label class="listar" id="personnel">인원정보</label>
+                           <select id="personnel">
+                               <option value="어른 0명">어른(만13세 이상) 0명</option>
+                               <option value="어른 1명" selected="selected">어른(만13세 이상) 1명</option>
+                               <option value="어른 2명">어른(만13세 이상) 2명</option>
+                               <option value="어른 3명">어른(만13세 이상) 3명</option>
+                               <option value="어른 4명">어른(만13세 이상) 4명</option>
+                               <option value="어른 5명">어른(만13세 이상) 5명</option>
+                               <option value="어른 6명">어른(만13세 이상) 6명</option>
+                               <option value="어른 7명">어른(만13세 이상) 7명</option>
+                               <option value="어른 8명">어른(만13세 이상) 8명</option>
+                               <option value="어른 9명">어른(만13세 이상) 9명</option>
+                               <option value="어른 10명">어른(만13세 이상) 10명</option>
+                           </select>
+                           <label>명</label>
+                           &nbsp;&nbsp;
+                           <select id="child">
+                               <option value="어린이 0명" selected="selected">어린이(만6~12세) 0명</option>
+                               <option value="어린이 1명">어린이(만6~12세) 1명</option>
+                               <option value="어린이 2명">어린이(만6~12세) 2명</option>
+                               <option value="어린이 3명">어린이(만6~12세) 3명</option>
+                               <option value="어린이 4명">어린이(만6~12세) 4명</option>
+                               <option value="어린이 5명">어린이(만6~12세) 5명</option>
+                               <option value="어린이 6명">어린이(만6~12세) 6명</option>
+                               <option value="어린이 7명">어린이(만6~12세) 7명</option>
+                               <option value="어린이 8명">어린이(만6~12세) 8명</option>
+                               <option value="어린이 9명">어린이(만6~12세) 9명</option>
+                               <option value="어린이 10명">어린이(만6~12세) 10명</option>
+                           </select>
+                           <label>명</label>
+                           &nbsp;&nbsp;
+                           <select id="old">
+                               <option value="경로 0명" selected="selected">경로(만 65세 이상) 0명</option>
+                               <option value="경로 1명">경로(만 65세 이상) 1명</option>
+                               <option value="경로 2명">경로(만 65세 이상) 2명</option>
+                               <option value="경로 3명">경로(만 65세 이상) 3명</option>
+                               <option value="경로 4명">경로(만 65세 이상) 4명</option>
+                               <option value="경로 5명">경로(만 65세 이상) 5명</option>
+                               <option value="경로 6명">경로(만 65세 이상) 6명</option>
+                               <option value="경로 7명">경로(만 65세 이상) 7명</option>
+                               <option value="경로 8명">경로(만 65세 이상) 8명</option>
+                               <option value="경로 9명">경로(만 65세 이상) 9명</option>
+                               <option value="경로 10명">경로(만 65세 이상) 10명</option>
+                           </select>
+                           <label>명</label>    
+                       </div>
+                   </div>
+                   <br>
+                   <div class="rt">
+                       <label id="seattype">좌석종류</label>
+                       <select id="seattype">
+                           <option value="좌석 종류" selected="selected">좌석 종류</option>
+                           <option value="일반">일반</option>
+                           <option value="특실">특실</option>
+                       </select>                    
+                   </div>
+                   <br>
+                   <div class="rt">
+                       <label id="seattype">차종구분</label>
+                       &nbsp;
+                       <input class="form-check-input" type="radio" name="flexRadioDefault" id="CRX">
+                       <label class="form-check-label" for="CRX">CRX</label>
+                       &nbsp;
+                       <input class="form-check-input" type="radio" name="flexRadioDefault" id="KTX" checked>
+                       <label class="form-check-label" for="KTX">KTX</label>
+                   </div>
+                   <br><br>
+                   <div class="search">
+                       <button type="button" class="btn btn-success" onclick="searchTrains()">조회하기</button>
+                   </div>
+                   <div class="result" id="result">
+                       <p id="resultText"></p>
+                   </div>
+               </div>
+           </div>
+       </div>
+
+       <script>
+           function searchTrains() {
+               const start = document.getElementById('start').value;
+               const end = document.getElementById('end').value;
+               const date = document.getElementById('Date').value;
+               const time = document.getElementById('listtime').value;
+               const personnel = document.getElementById('personnel').value;
+               const child = document.getElementById('child').value;
+               const old = document.getElementById('old').value;
+               const seattype = document.getElementById('seattype').value;
+               const trainType = document.querySelector('input[name="flexRadioDefault"]:checked').nextElementSibling.textContent;
+
+               const resultText = `
+			   		<style>
+			              .checkTrain {
+			                  width: 100%;
+			                  border-collapse: collapse;
+			              }
+			              .checkTrain th, .checkTrain td {
+			                  border: 1px solid #ddd;
+			                  padding: 8px;
+			                  text-align: center;
+			              }
+			              .checkTrain th {
+			                  background-color: #f2f2f2;
+			                  color: black;
+			              }
+			              .checkTrain tr:nth-child(even) {
+			                  background-color: #f9f9f9;
+			              }
+			              .checkTrain tr:hover {
+			                  background-color: #ddd;
+			              }
+			        </style>
+					<br>
+			   		<table class="checkTrain">
+						<thead>
+						<tr>
+							<th>열차종류</th>
+							<th>열차번호</th>
+							<th>출발역</th>
+							<th>도착역</th>
+							<th>좌석종류</th>
+							<th>출발시간</th>
+							<th>도착시간</th>
+							<th>소요시간</th>								
+						</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>${trainType}</td>
+								<td>${trainNo}</td>
+								<td>${start}</td>
+								<td>${end}</td>
+								<td>${seatType}</td>
+								<td>${startTime}</td>
+								<td>${endTime}</td>
+								<td>${timeTaken}</td>
+							</tr>
+						</tbody>
+					</table>
+               `;
+
+               document.getElementById('resultText').innerHTML = resultText;
+               document.getElementById('result').style.display = 'block';
+           }
+
+           function hideResult() {
+               document.getElementById('result').style.display = 'none';
+           }
+       
 <!-- 오늘 이전으로 선택되지 않도록 설정 -->
-<script>
+
 	var now_utc = Date.now()
 		var timeOff = new Date().getTimezoneOffset()*60000;
 		var today = new Date(now_utc-timeOff).toISOString().split("T")[0];

@@ -60,6 +60,37 @@ public class CrxControllerImpl {
         return "refundEnd"; 
     }
     
+    //화천역
+    @GetMapping("/hwacheon.do")
+    public String hwacheon() {
+        return "hwacheon"; 
+    }
+    //양구역
+    @GetMapping("/yanggu.do")
+    public String yanggu() {
+        return "yanggu"; 
+    }
+    //인제역
+    @GetMapping("/inje.do")
+    public String inje() {
+        return "inje"; 
+    }
+    //고성역
+    @GetMapping("/goseong.do")
+    public String goseong() {
+        return "goseong"; 
+    }
+    //속초역
+    @GetMapping("/sokcho.do")
+    public String sokcho() {
+        return "sokcho"; 
+    }
+    //양양역
+    @GetMapping("/yangyang.do")
+    public String yangyang() {
+        return "yangyang"; 
+    }
+    
     //테스트
     @GetMapping("/test.do")
     public String test() {

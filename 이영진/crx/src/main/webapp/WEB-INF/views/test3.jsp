@@ -5,223 +5,390 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
-
-<meta charset="UTF-8">
-<title>결제</title>
-<style>
-	.all{
-		width: 1200px;	
-		margin: 0 auto; <!-- 중앙 정렬 -->
-	}
-	.tiline{
-		display:inline;
-		border: solid 1px green;
-		border-radius: 8px;
-		padding: 5px;
-		color: green;
-		margin: 5px;
-	}
-	.guide{
-		width: 1200px;
-		height: auto;
-		background-color: #f8f8f8;
-		margin: 2px;
-		padding: 5px;
-		font-size: 12px;
-	}
-	.guidep{
-		margin-bottom: 3px;
-	}
-	.payment{
-		text-align: center;
-	}
-	
-	table, th, td {
-	    border: 2px solid white;
-	    border-collapse: collapse;
-	}
-	th, td {
-	    background-color: #96D4D4;
-	}
-	.ta th{
-		background-color: #96D4D4;
-		width: 110px;
-	}
-	.ta td{
-		background-color: #f9f9f9;
-	}
-	.taa th{
-		background-color: #96D4D4;
-		width: 100px;
-	}
-	.taa td{
-		background-color: #f9f9f9;
-	}
-	.amount{
-		width: 250px;
-		height: 40px;
-	}	
-</style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>일반승차권 예매</title>
+    <style>
+        .all {
+            width: 1200px;
+            margin: 0 auto; /* 중앙 정렬 */
+        }
+        .tiline {
+            display: inline;
+            border: solid 1px green;
+            border-radius: 8px;
+            padding: 5px;
+            color: green;
+            margin: 5px;
+        }
+        .mid {
+            height: 300px;
+            background: #f8f8f8;
+        }
+        .relist {
+            margin: 0 5px;
+            padding: 5px;
+        }
+        .rt {
+            margin: 3px;
+        }
+        .search {
+            text-align: center;
+        }
+        .minititle a {
+            color: #000000;
+        }
+        table, th, td {
+            border: 2px solid white;
+            border-collapse: collapse;
+        }
+        #Date {
+            width: 140px;
+            display: inline;
+        }
+        .checkTrain {
+            border: 2px solid white;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
-<jsp:include page="header.jsp" />	
-<div class="all">	
-	<div class="maintitle">
-		<h1>결제</h1>
-		<hr>
-	</div>
-		
-	<br>
-	<div style="text-align:center;">
-		<img src= "../img/mark3.gif" style="width:500px">
-	</div>
-	
-	<br>
-	<div class="guide">
-		<p class="guidep">결제방법은 신용카드, 실시간계좌이체, 가상계좌, 소액결제  4가지가 있습니다.</p>
-		<p class="guidep">간편결제의 경우 신용카드 선택하시면 됩니다.</p>
-	</div>
-	
-	<br>
-	<div>
-		<table class="amount">
-			<thead class="ta">
-				<th>결제 금액</th>
-				<td id="pay">1000원</td>
-			</thead>	
-		</table>
-	</div>
-	
-	<br>
-	<ul class="nav nav-tabs" id="myTab" role="tablist">
-	    <li class="nav-item" role="presentation">
-	   		<button class="nav-link active" aria-controls="home-tab-pane" aria-selected="true">결제방법</button>
-	    </li>
-	    
-	</ul>
-	<div class="tab-content" id="myTabContent">
-	    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-		    <br>		
-			
-			
-			<div class="form-check">
-			    <input class="form-check-input" type="radio" name="payment" id="card" checked>
-			    <label class="form-check-label" for="card">
-			        신용카드
-			    </label>
-			</div>
-			<div class="form-check">
-			    <input class="form-check-input" type="radio" name="payment" id="trans">
-			    <label class="form-check-label" for="trans">
-			        실시간계좌이체
-			    </label>
-			</div>
-			<div class="form-check">
-			    <input class="form-check-input" type="radio" name="payment" id="vbank">
-			    <label class="form-check-label" for="vbank">
-			        가상계좌
-			    </label>
-			</div>
-			<div class="form-check">
-			    <input class="form-check-input" type="radio" name="payment" id="phone">
-			    <label class="form-check-label" for="phone">
-			        소액결제
-			    </label>
-			</div>
+    <jsp:include page="header.jsp" />
+    <div class="all">
+        <div class="maintitle">
+            <h1>일반승차권</h1>
+            <hr>
+        </div>
+        <br>
+        <div style="text-align:center;">
+            <img src="../img/mark1.gif" style="width:500px">
+        </div>
+        <br>
+        <div>
+            <br>
+            <ul class="nav nav-tabs">
+                <li class="minititle nav-item">
+                    <a class="nav-link active bg-light" aria-current="page" href="ticket.do">일반승차권 조회</a>
+                </li>
+                <li class="minititle nav-item">
+                    <a class="nav-link" href="groupTicket.do">단체승차권 조회</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mid">
+            <div>
+                <div class="relist">
+                    <br>
+                    <div class="rt">
+                        <label for="start">출발역</label>
+                        <input id="start" name="txtGoStart" type="text" class="inp200" value="대전" onchange="hideResult();" title="출발역" autocomplete="off" style="ime-mode:active">
+                        &nbsp;&nbsp;&nbsp;
+                        <label for="end">도착역</label>
+                        <input id="end" name="txtGoEnd" type="text" class="inp200" value="서울" onchange="hideResult();" title="도착역" autocomplete="off" style="ime-mode:active">
+                    </div>
+                    <br>
+                    <div class="rt">
+                        <label for="Date">출발일</label>
+                        <input type="date" id="Date" name="lostItemRegDate">        
+                        &nbsp;&nbsp;
+                        <label for="listtime">시간</label>
+                        <select id="listtime">
+                            <option value="08" selected="selected">08</option>
+                            <option value="10">10</option>
+                            <option value="12">12</option>
+                            <option value="14">14</option>
+                            <option value="16">16</option>
+                            <option value="18">18</option>
+                            <option value="20">20</option>
+                            <option value="22">22</option>
+                            <option value="24">24</option>
+                        </select>
+                        <label>시</label>    
+                    </div>
+                    <br>
+                    <div class="rt">
+                        <div>
+                            <label for="personnel">인원정보</label>
+                            <select id="personnel">
+                                <option value="어른 0명">어른(만13세 이상) 0명</option>
+                                <option value="어른 1명" selected="selected">어른(만13세 이상) 1명</option>
+                                <option value="어른 2명">어른(만13세 이상) 2명</option>
+                                <option value="어른 3명">어른(만13세 이상) 3명</option>
+                                <option value="어른 4명">어른(만13세 이상) 4명</option>
+                                <option value="어른 5명">어른(만13세 이상) 5명</option>
+                                <option value="어른 6명">어른(만13세 이상) 6명</option>
+                                <option value="어른 7명">어른(만13세 이상) 7명</option>
+                                <option value="어른 8명">어른(만13세 이상) 8명</option>
+                                <option value="어른 9명">어른(만13세 이상) 9명</option>
+                                <option value="어른 10명">어른(만13세 이상) 10명</option>
+                            </select>
+                            <label>명</label>
+                            &nbsp;&nbsp;
+                            <select id="child">
+                                <option value="어린이 0명" selected="selected">어린이(만6~12세) 0명</option>
+                                <option value="어린이 1명">어린이(만6~12세) 1명</option>
+                                <option value="어린이 2명">어린이(만6~12세) 2명</option>
+                                <option value="어린이 3명">어린이(만6~12세) 3명</option>
+                                <option value="어린이 4명">어린이(만6~12세) 4명</option>
+                                <option value="어린이 5명">어린이(만6~12세) 5명</option>
+                                <option value="어린이 6명">어린이(만6~12세) 6명</option>
+                                <option value="어린이 7명">어린이(만6~12세) 7명</option>
+                                <option value="어린이 8명">어린이(만6~12세) 8명</option>
+                                <option value="어린이 9명">어린이(만6~12세) 9명</option>
+                                <option value="어린이 10명">어린이(만6~12세) 10명</option>
+                            </select>
+                            <label>명</label>
+                            &nbsp;&nbsp;
+                            <select id="old">
+                                <option value="경로 0명" selected="selected">경로(만 65세 이상) 0명</option>
+                                <option value="경로 1명">경로(만 65세 이상) 1명</option>
+                                <option value="경로 2명">경로(만 65세 이상) 2명</option>
+                                <option value="경로 3명">경로(만 65세 이상) 3명</option>
+                                <option value="경로 4명">경로(만 65세 이상) 4명</option>
+                                <option value="경로 5명">경로(만 65세 이상) 5명</option>
+                                <option value="경로 6명">경로(만 65세 이상) 6명</option>
+                                <option value="경로 7명">경로(만 65세 이상) 7명</option>
+                                <option value="경로 8명">경로(만 65세 이상) 8명</option>
+                                <option value="경로 9명">경로(만 65세 이상) 9명</option>
+                                <option value="경로 10명">경로(만 65세 이상) 10명</option>
+                            </select>
+                            <label>명</label>    
+                        </div>
+                    </div>
+                    <br>
+                    <div class="rt">
+                        <label for="seattype">좌석종류</label>
+                        <select id="seattype">
+                            <option value="좌석 종류" selected="selected">좌석 종류</option>
+                            <option value="일반">일반</option>
+                            <option value="특실">특실</option>
+                        </select>                    
+                    </div>
+                    <br>
+                    <div class="rt">
+                        <label for="trainType">차종구분</label>
+                        &nbsp;
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="CRX">
+                        <label class="form-check-label" for="CRX">CRX</label>
+                        &nbsp;
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="KTX" checked>
+                        <label class="form-check-label" for="KTX">KTX</label>
+                    </div>
+                    <br><br>
+                    <div class="search">
+                        <button type="button" class="btn btn-success" onclick="searchTrains()">조회하기</button>
+                    </div>
+                    <div class="result" id="result" style="display: none;">
+                        <p id="resultText"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-			
-			
-			
-			<br>
-			<div class="guide">
-				<p class="guidep">내용내용내용내용내용내용내용내용내용내용내용내용</p>
-				<p class="guidep">내용내용내용내용내용내용내용내용내용내용내용내용</p>
-				<p class="guidep">내용내용내용내용내용내용내용내용내용내용내용내용</p>
-			</div>
-	    </div>
-	    
-	</div>
-	
-	<br>
-	<div class="payment">
-		
-		<button class="btn_payment">결제하기</button>
-		<button type="button" class="btn btn-success">돌아가기</button>
-	</div>
-	
-</div>
+    <script>
+        function searchTrains() {
+            // 입력된 값을 가져옵니다
+            const start = document.getElementById('start').value;
+            const end = document.getElementById('end').value;
+            const date = document.getElementById('Date').value;
+            const time = document.getElementById('listtime').value;
+            const personnel = document.getElementById('personnel').value;
+            const child = document.getElementById('child').value;
+            const old = document.getElementById('old').value;
+            const seattype = document.getElementById('seattype').value;
+            const trainType = document.querySelector('input[name="flexRadioDefault"]:checked').nextElementSibling.textContent;
 
-<script>
-	
-	$(".btn_payment").click(function() {
-	    // 라디오 버튼에서 선택된 결제 방법을 확인하는 함수
-	    function checkSelectedPayment() {
-	        var selectedMethod = $('input[name=payment]:checked').attr('id');
-	        switch (selectedMethod) {
-	            case 'card':
-	                return 'card';
-	            case 'trans':
-	                return 'trans';
-	            case 'vbank':
-	                return 'vbank';
-	            case 'phone':
-	                return 'phone';
-	            default:
-	                return 'card'; // 선택되지 않았을 경우 기본값은 'card'로 설정 (이 경우는 발생하지 않도록 설계하는 것이 좋습니다)
-	        }
-	    }
+            // 예시 JSON 데이터 (실제 API 호출로 대체 가능)
+            const response = {
+              "response": {
+                "header": {
+                  "resultCode": "00",
+                  "resultMsg": "NORMAL SERVICE."
+                },
+                "body": {
+                  "items": {
+                    "item": [
+					{
+					            "adultcharge": 23700,
+					            "arrplacename": "서울",
+					            "arrplandtime": 20240723104800,
+					            "depplacename": "대전",
+					            "depplandtime": 20240723094600,
+					            "traingradename": "KTX",
+					            "trainno": 14
+					          },
+					          {
+					            "adultcharge": 17200,
+					            "arrplacename": "서울",
+					            "arrplandtime": 20240723113400,
+					            "depplacename": "대전",
+					            "depplandtime": 20240723095100,
+					            "traingradename": "KTX",
+					            "trainno": 122
+					          },
+					          {
+					            "adultcharge": 23700,
+					            "arrplacename": "서울",
+					            "arrplandtime": 20240723111900,
+					            "depplacename": "대전",
+					            "depplandtime": 20240723101100,
+					            "traingradename": "KTX",
+					            "trainno": 104
+					          },
+					          {
+					            "adultcharge": 23700,
+					            "arrplacename": "서울",
+					            "arrplandtime": 20240723112400,
+					            "depplacename": "대전",
+					            "depplandtime": 20240723101600,
+					            "traingradename": "KTX",
+					            "trainno": 16
+					          },
+					          {
+					            "adultcharge": 23700,
+					            "arrplacename": "서울",
+					            "arrplandtime": 20240723112800,
+					            "depplacename": "대전",
+					            "depplandtime": 20240723102600,
+					            "traingradename": "KTX",
+					            "trainno": 18
+					          },
+					          {
+					            "adultcharge": 23700,
+					            "arrplacename": "서울",
+					            "arrplandtime": 20240723114900,
+					            "depplacename": "대전",
+					            "depplandtime": 20240723103600,
+					            "traingradename": "KTX",
+					            "trainno": 20
+					          },
+					          {
+					            "adultcharge": 23700,
+					            "arrplacename": "서울",
+					            "arrplandtime": 20240723115300,
+					            "depplacename": "대전",
+					            "depplandtime": 20240723105800,
+					            "traingradename": "KTX",
+					            "trainno": 22
+					          },
+					          {
+					            "adultcharge": 23700,
+					            "arrplacename": "서울",
+					            "arrplandtime": 20240723123300,
+					            "depplacename": "대전",
+					            "depplandtime": 20240723112600,
+					            "traingradename": "KTX",
+					            "trainno": 24
+					          },
+					          {
+					            "adultcharge": 23700,
+					            "arrplacename": "서울",
+					            "arrplandtime": 20240723124800,
+					            "depplacename": "대전",
+					            "depplandtime": 20240723113400,
+					            "traingradename": "KTX",
+					            "trainno": 238
+					          },
+					          {
+					            "adultcharge": 23700,
+					            "arrplacename": "서울",
+					            "arrplandtime": 20240723130400,
+					            "depplacename": "대전",
+					            "depplandtime": 20240723120000,
+					            "traingradename": "KTX",
+					            "trainno": 26
+					          }
+                    ]
+                  },
+                  "numOfRows": 10,
+                  "pageNo": 2,
+                  "totalCount": 58
+                }
+              }
+            };
 
-	    IMP.init("imp10351001");
-		
-	    // 결제 요청
-	    IMP.request_pay({
-	        pg: 'html5_inicis',
-	        merchant_uid: 'merchant_' + new Date().getTime(),
-	        pay_method: checkSelectedPayment(), // 선택된 라디오 버튼에 따라 동적으로 결제 방법을 설정합니다
-	        name: '주문명:결제테스트',
-	        amount: 100,
-	        buyer_email: 'iamport@siot.do',
-	        buyer_name: '구매자이름',
-	        buyer_tel: '010-1234-5678',
-	        buyer_addr: '서울특별시 강남구 삼성동',
-	        buyer_postcode: '123-456'
-	    }, function(rsp) {
-	        var result = '';
-	        if (rsp.success) {
-	            // 결제 성공 시 처리
-	            var msg = '결제가 완료되었습니다.\n';
-	            msg += '고유ID : ' + rsp.imp_uid + '\n';
-	            msg += '상점 거래ID : ' + rsp.merchant_uid + '\n';
-	            msg += '결제 금액 : ' + rsp.paid_amount + '\n';
-	            msg += '카드 승인번호 : ' + rsp.apply_num + '\n';
-	            result = '0';
-	        } else {
-	            // 결제 실패 시 처리
-	            var msg = '결제에 실패하였습니다.\n';
-	            msg += '에러내용 : ' + rsp.error_msg + '\n';
-	            result = '1';
-	        }
+            // 결과 텍스트를 만듭니다
+            const items = response.response.body.items.item;
+            let resultText = `
+                <style>
+                    .checkTrain {
+                        width: 100%;
+                        border-collapse: collapse;
+                    }
+                    .checkTrain th, .checkTrain td {
+                        border: 1px solid #ddd;
+                        padding: 8px;
+                        text-align: center;
+                    }
+                    .checkTrain th {
+                        background-color: #f2f2f2;
+                        color: black;
+                    }
+                    .checkTrain tr:nth-child(even) {
+                        background-color: #f9f9f9;
+                    }
+                    .checkTrain tr:hover {
+                        background-color: #ddd;
+                    }
+                </style>
+                <br>
+                <table class="checkTrain">
+                    <thead>
+                        <tr>
+                            <th>열차종류</th>
+                            <th>열차번호</th>
+                            <th>출발역</th>
+                            <th>도착역</th>
+                            <th>좌석종류</th>
+                            <th>출발시간</th>
+                            <th>도착시간</th>
+                            <th>소요시간</th>
+                            <th>요금</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            
+            items.forEach(item => {
+                const depDateTime = `${item.depplandtime.toString().slice(0, 4)}-${item.depplandtime.toString().slice(4, 6)}-${item.depplandtime.toString().slice(6, 8)} ${item.depplandtime.toString().slice(8, 10)}:${item.depplandtime.toString().slice(10, 12)}`;
+                const arrDateTime = `${item.arrplandtime.toString().slice(0, 4)}-${item.arrplandtime.toString().slice(4, 6)}-${item.arrplandtime.toString().slice(6, 8)} ${item.arrplandtime.toString().slice(8, 10)}:${item.arrplandtime.toString().slice(10, 12)}`;
+                const duration = (item.arrplandtime - item.depplandtime) / 60000; // 시간 차를 분 단위로 계산
+                resultText += `
+                    <tr>
+                        <td>${item.traingradename}</td>
+                        <td>${item.trainno}</td>
+                        <td>${item.depplacename}</td>
+                        <td>${item.arrplacename}</td>
+                        <td>${seattype}</td>
+                        <td>${depDateTime}</td>
+                        <td>${arrDateTime}</td>
+                        <td>${Math.floor(duration / 60)}시간 ${duration % 60}분</td>
+                        <td>${item.adultcharge.toLocaleString()}원</td>
+                    </tr>
+                `;
+            });
 
-	        if (result == '0') {
-	            // 성공 시 추가 처리 (예: 결제 완료 페이지로 이동)
-	            console.log('결제 성공 처리');
-	        } else {
-	            // 실패 시 추가 처리
-	            console.log('결제 실패 처리');
-	        }
+            resultText += `
+                    </tbody>
+                </table>
+            `;
 
-	        // 사용자에게 메시지 표시
-	        alert(msg);
-	    });
-	});
+            // 결과를 표시합니다
+            document.getElementById('resultText').innerHTML = resultText;
+            document.getElementById('result').style.display = 'block';
+        }
 
-
-</script>
+        function hideResult() {
+            document.getElementById('result').style.display = 'none';
+        }
+        
+        // 오늘 날짜 이후로만 선택할 수 있도록 설정
+        var now_utc = Date.now();
+        var timeOff = new Date().getTimezoneOffset() * 60000;
+        var today = new Date(now_utc - timeOff).toISOString().split("T")[0];
+        document.getElementById("Date").value = today;
+        document.getElementById("Date").setAttribute("min", today);
+    </script>
 </body>
 </html>
-
-
