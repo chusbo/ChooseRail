@@ -1,0 +1,31 @@
+기차, 기차역 관련 API
+국토교통부_(TAGO)_열차정보 : https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15098552
+열차/KTX운행정보 : https://lab.odsay.com/guide/console#trainServiceTime
+기차역 터미널 조회 : https://lab.odsay.com/guide/console#trainTerminals
+
+
+지하철, 지하철역 관련 API
+지하철역 세부정보 조회 : https://lab.odsay.com/guide/console#subwayStationInfo
+지하철역 전체 시간표 조회 : https://lab.odsay.com/guide/console#searchSubwaySchedule
+서울시 역사마스터 정보 : http://data.seoul.go.kr/dataList/OA-21232/S/1/datasetView.do
+서울시 지하철 실시간 열차 위치정보 : http://data.seoul.go.kr/dataList/OA-12601/A/1/datasetView.do
+서울시 지하철 실시간 도착정보 : http://data.seoul.go.kr/dataList/OA-12764/F/1/datasetView.do
+서울교통공사 역간 거리 및 소요시간 정보(1~8호선) : http://data.seoul.go.kr/dataList/OA-12034/S/1/datasetView.do
+반경 내 버스/지하철 정류장 및 버스노선 조회 : https://lab.odsay.com/guide/console#pointBusStation
+
+
+버스, 버스정류장 관련 API
+서울특별시_버스위치정보조회 서비스 : https://www.data.go.kr/data/15000332/openapi.do
+서울특별시_버스도착정보조회 서비스 : https://www.data.go.kr/data/15000314/openapi.do
+버스노선 조회 : https://lab.odsay.com/guide/console#searchBusLane
+버스노선 상세정보 조회 : https://lab.odsay.com/guide/console#busLaneDetail
+버스정류장 세부정보 조회 : https://lab.odsay.com/guide/console#busStationInfo
+실시간 버스 위치정보 조회 : https://lab.odsay.com/guide/console#realtimeRoute
+실시간 버스 도착정보 조회 : https://lab.odsay.com/guide/console#realtimeStation
+
+
+지도 관련 API
+Web Dynamic Map : https://console.ncloud.com/naver-service/application
+
+본인이 활용 했거나 활용 예정인 API 추가 해주세요. 이후 체크 요망
+그리고 해당 코드에 주석으로 체크 해주세요.
