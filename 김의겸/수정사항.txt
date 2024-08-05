@@ -1,0 +1,97 @@
+main.jsp 도착역 수정
+
+login.jsp 회원번호 찾기, 비밀번호 찾기 부분 큰따옴표 제거
+<form action="${contextPath}/login" method="post"> -> <form action="${contextPath}/login.do" method="post"> 변경
+CrxDAO.java 생성 import com.project.crx.vo.CrxVO; 추가, 로그인 메서드(loginById) 추가, 마이페이지(기본정보) 메서드 추가
+유저 정보수정 메서드 추가
+
+
+CrxService.java 생성 import com.project.crx.vo.CrxVO; 추가, 로그인 메서드 추가, 마이페이지(기본정보) 메서드 추가
+유저 정보수정 메서드 추가
+
+CrxServiceImpl.java 생성 import com.project.crx.dao.CrxDAO; 추가, 로그인 메서드 추가, 마이페이지(기본정보) 메서드 추가
+			import com.project.crx.vo.CrxVO; 추가
+			@Autowired 추가(private CrxDAO crxDAO;)
+			logout 메서드 변경
+유저 정보수정 메서드 추가
+
+CrxController.java -> import com.project.crx.vo.CrxVO; 추가
+로그인 메서드 변경, 마이페이지(기본정보) 메서드(mypage) 추가
+유저 정보수정 메서드 추가
+
+CrxControllerImpl.java -> import 추가, 각 메서드 @Override 추가 (전체적인 수정 필요), @Autowired 추가
+login 메서드(Get, Post) 두 방식 모두 사용 / logout 메서드 추가
+mypage 메서드 변경(cookie 제거 추가)
+유저 정보수정 메서드 추가
+
+CrxVO.java -> 임시로 user 테이블만 추가(로그인 확인용)
+
+crx.xml -> 임시로 user 테이블만 추가(로그인 확인용), 로그인 쿼리문(id="loginById") 추가, 마이페이지(기본정보) 쿼리문(id="getUserInfo") 추가, 유저 정보수정 쿼리문(id="updateUserInfo") 추가
+
+
+
+application.properties -> spring.jpa.database=mysql 제거
+			spring.jpa.hibernate.ddl-auto=update 제거
+			spring.devtools.restart.enabled=true 제거
+			spring.devtools.livereload.enabled=true 제거
+
+			spring.thymeleaf.cache=false 제거
+			spring.thymeleaf.enabled=true 제거
+			spring.thymeleaf.prefix=file:src/main/resources/templates/ 제거
+
+			mybatis.config=classpath:mybatis-config.xml 추가
+			mybatis.type-aliases-package=com.project.crx.vo 추가
+			mybatis.mapper-locations=classpath:mybatis/mappers/*.xml 추가
+
+src/main/resources 경로에 mybatis-config.xml 추가 및 crx.xml 매퍼 추가
+
+각 항목별 xml 추가 시, mybatis-config.xml에 매퍼 추가
+
+
+header-mini.jsp
+			    <c:when test="${not empty userId}">
+			        <span class="minilist">${userid}님</span>
+				에서 아래로 변경
+			    <c:when test="${not empty username}">
+			        <span class="minilist">${username}님</span>
+
+
+<%
+    String userid = (String) session.getAttribute("userid");
+%>
+에서
+
+<% 
+    String username = (String) session.getAttribute("username");
+%>
+
+이렇게 수정
+
+
+
+
+
+mypage.jsp
+탈퇴사유 부분 <option>CRX 열차 이용 볼푼</option> -> <option>CRX 열차 이용 불편</option> 수정
+기본정보 부분 세션값 불러와서 노출될 수 있도록 변경
+
+정보수정 부분 form action 주소 추가 및 value 추가
+
+
+zipcode.jsp
+바디내용 	  <input type="text" id="sample6_postcode" style="width:100px" placeholder="우편번호">
+	  <input type="button" onclick="sample6_execDaumPostcode()" value="주소검색"><br>
+	  <input type="text" id="sample6_address" style="width:400px" placeholder="주소"><br>
+	  <input type="text" id="sample6_detailAddress" placeholder="상세주소">
+	  <input type="hidden" id="sample6_extraAddress" placeholder="참고주소">
+에서
+	<input type="text" id="sample6_postcode" style="width:100px" placeholder="우편번호" value="${sessionScope.crxVO.useradd}">
+	<input type="button" onclick="sample6_execDaumPostcode()" value="주소검색"><br>
+	<input type="text" id="sample6_address" style="width:400px" placeholder="주소" value="${sessionScope.crxVO.useradd}"><br>
+	<input type="text" id="sample6_detailAddress" placeholder="상세주소" value="${sessionScope.crxVO.useradd}">
+	<input type="hidden" id="sample6_extraAddress" placeholder="참고주소">
+으로 변경
+
+
+
+logout.jsp 변경(cookie 제거 추가)
