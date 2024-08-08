@@ -1,0 +1,3 @@
+coolsms.apikey=API KEY
+coolsms.apisecret=SECRET KEY
+coolsms.fromnumber=발신번호

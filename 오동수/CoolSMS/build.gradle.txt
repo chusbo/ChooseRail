@@ -1,0 +1,4 @@
+dependencies {    
+    implementation 'net.nurigo:sdk:4.3.0'
+    implementation 'net.nurigo:javaSDK:2.2'
+}
