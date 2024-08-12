@@ -1,0 +1,8 @@
+CREATE EVENT delete_old_records
+ON SCHEDULE EVERY 10 SECOND
+DO
+DELETE FROM tourreserv2 WHERE TIMESTAMPDIFF(SECOND, reservtime, NOW()) >= 10;
+
+
+
+DROP EVENT IF EXISTS delete_old_records;
