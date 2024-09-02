@@ -38,7 +38,7 @@ CREATE TABLE `reservtour` (
   KEY `fk_tourreserv_tour1_idx_idx` (`tour_tournum`),
   CONSTRAINT `fk_tourreserv_tour1_idx` FOREIGN KEY (`tour_tournum`) REFERENCES `tour` (`tournum`),
   CONSTRAINT `fk_tourreserv_user1_idx` FOREIGN KEY (`user_userid`) REFERENCES `user` (`userid`)
-) ENGINE=InnoDB AUTO_INCREMENT=10033 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10035 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-09-02 16:29:45
+-- Dump completed on 2024-09-02 17:29:58
